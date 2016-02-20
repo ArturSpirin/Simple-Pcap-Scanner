@@ -22,7 +22,7 @@ class Scan:
                         count+=1
                         self.keyWords.append(sys.argv[count])
                 else:
-                    self.keyWords = [".us","anchorfree","hotspotshield","vpn","proxy","rss2search", "hsselite"]
+                    self.keyWords = [".us","anchorfree","hotspotshield","hss","rss2search", "hsselite", "vpn"]
             else: print "using default"
 
         print "Working with file:", self.file
@@ -34,6 +34,7 @@ class Scan:
         if(tsharkHome==None): print "TSHARK_HOME not found! Make sure to set TSHARK_HOME env variable."
         else: print "TSHARK_HOME found at:", tsharkHome
 
+        if "tshark" not in tsharkHome: tsharkHome += "/tshark"
         os.system('{} -V -r {} > pcapText.txt'.format(tsharkHome, self.file))
 
         with open('pcapText.txt', 'r+') as File:
