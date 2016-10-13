@@ -22,8 +22,8 @@ class Scan:
                         count+=1
                         self.keyWords.append(sys.argv[count])
                 else:
-                    self.keyWords = [".us","anchorfree","hotspotshield","hss","rss2search", "hsselite", "vpn"]
-            else: print "using default"
+                    self.keyWords = ["find", "this", "words", "in", "the", "pcap", "file"]
+            else: print "using default keywords"
 
         print "Working with file:", self.file
         print "Using key words: ", self.keyWords
